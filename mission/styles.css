@@ -34,3 +34,12 @@ img {
     display: block;
     margin: 30px auto;
 }
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+body.dark p {
+    color: white;
+}
