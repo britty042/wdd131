@@ -21,9 +21,6 @@ hr {
     margin-top:0;
 }
 
-#info p {
-    color:black;
-}
 
 #info p:nth-child(2) {
     font-style: italic;
