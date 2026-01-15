@@ -36,10 +36,14 @@ img {
 }
 
 body.dark {
-    background-color: black;
+    background-color: #333;
     color: white;
 }
 
 body.dark p {
     color: white;
+}
+
+body.dark h2{
+    color: lightblue;
 }
