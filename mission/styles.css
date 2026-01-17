@@ -2,18 +2,24 @@
     max-width: 60%;
     margin: 0 auto;
     font-family: 'Times New Roman', Times, serif;
+    border:1px solid black;
+    padding: 50px 150px;
+    line-height: 1.5em
 }
 
 h1 {
     font-size: 2em;
     text-align: center;
-    margin-top: 50px;
+    letter-spacing: .25em;
+
 }
 h2 {
     color: #035f9c; 
     font-size: 0.8em;
     text-align: center; 
     margin-bottom: 0;  
+    letter-spacing: .25em;
+
 }
 
 hr {
@@ -27,6 +33,7 @@ hr {
 
 li {
     padding: 10px;
+    line-height: 1.5em
 }
 
 img {
