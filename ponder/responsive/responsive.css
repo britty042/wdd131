@@ -88,12 +88,13 @@ footer {
         display: none;
     }
 
-    nav a {
-        display: inline;
-    }
 
     nav {
         text-align: right;
+    }
+
+    .hide {
+        display: block;
     }
 }
 
