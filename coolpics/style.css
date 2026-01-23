@@ -21,10 +21,13 @@ h1 {
     color: white;
 }
 
+/*This allowed me to alter the baseline of the camera image, making it more aligned with the Cool Pics H1, but because the
+assignment wanted a text tag, I moved it to the HTML.  I just wanted to keep this as a reference for myself.
+
 h1::after {
     content: "📷";
     vertical-align: .1em;
-}
+}*/
 
 nav a {
     padding: 0px 20px;
