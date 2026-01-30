@@ -143,13 +143,13 @@ footer::after {
     }
 
     dialog img {
-        width: 80%;
+        width: 60%;
         padding-top: 1em;
     }
 
     .close-viewer{
         top: -1vh;
-        right: 8vw;
+        right: 17vw;
     }
 }         
       
