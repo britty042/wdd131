@@ -14,7 +14,7 @@ header {
 }
 
 .main-nav {
-  list-style: none;
+    list-style: none;
     display: grid;
     grid-auto-flow: column;
     gap: 1.5rem;
