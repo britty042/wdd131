@@ -46,7 +46,7 @@ header {
 }
 
 .book-content {
-    padding: 25px;
+    padding-left: 25px;
     grid-column: 1/2;
 }
 
@@ -109,12 +109,11 @@ footer {
 
     .book-content h2 {
         grid-row: 1;
-        padding-left: 25px;
     }
 
     .book-content img {
         padding: 0;
-        width: 50%;
+        width: 40%;
     }
 }
 
