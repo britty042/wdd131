@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-sarif;
+}
+
+header {
+    padding: 5px 0px 45px 0px;
+    text-align: center;
+}
+
+header {
+    font-family: sarif;
+}
+
+.main-nav {
+  list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.5rem;
+    justify-content: right;
+    padding: 25px;
+    border-bottom: 2px solid goldenrod;
+    border-top: 2px solid goldenrod;
+}
+.main-nav a{
+    text-decoration: none;
+    color:darkred;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border-top: 2px solid goldenrod;
+    padding: 25px;
+
+}
+
+.book-information {
+    grid-column: 2/3;
+    text-align: right;
+}
+
+.book-information p:first-of-type {
+    font-style: italic;
+}
+
+.book-content {
+    padding: 25px;
+    grid-column: 1/2;
+}
+
+.book-content h2 {
+    font-family: sarif;
+    color: darkred;
+}
+
+.book-content img {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 50%;
+}
+
+.book-content p {
+    font-size: 1em;
+}
+
+footer {
+    border-top: 2px solid goldenrod;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    header {
+        padding: 0px;
+        text-align: center;
+    }
+
+    .book {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        position: relative;
+        padding: 25px;
+        border-top: none;
+    }
+    
+    .book::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        bottom: 25px;
+        left: calc(33.333%);
+        width: 2px;
+        background-color: goldenrod;
+    }
+
+    .book-information {
+        grid-column: 1/2;
+        grid-row: auto;
+        text-align: right;
+        padding: 0px 25px 0px 25px;
+    }
+
+    .book-content  {
+        grid-column: 2/3;
+    }
+
+    .book-content h2 {
+        grid-row: 1;
+        padding-left: 25px;
+    }
+
+    .book-content img {
+        padding: 0;
+        width: 50%;
+    }
+}
+
