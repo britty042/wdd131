@@ -38,3 +38,8 @@ modal.addEventListener('click', (event) => {
         modal.close();
     }
 });
+
+modal.addEventListener('click', () => {
+    modal.close();
+});
+
