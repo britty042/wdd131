@@ -52,12 +52,19 @@ const bookList = document.querySelector('#book-list');
         
         const bookContent = document.createElement('div')
         bookContent.className = 'book-content';
+
+		const starCount = item.stars ? item.stars.length : 0;
+
         
         bookInfo.innerHTML = `                
                 <p> ${item.date}</p>
                 <p> ${item.ages}</p>
                 <p> ${item.genre}</p>
-                <p><span aria-label="${item.stars.length} out of 5 stars" role="img">${item.stars}</span></p>
+				<p>
+				<span aria-label="${starCount} out of 5 stars" role="img">
+					${item.stars || ""}
+				</span>
+				</p>
                 `
         
         bookContent.innerHTML = `
