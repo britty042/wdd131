@@ -41,25 +41,33 @@ const articles = [
 ];
 
 const bookList = document.querySelector('#book-list');
-const bookInfo = document.querySelector('#book-information');
-const bookContent = document.querySelector('#book-content');
 
     articles.forEach(item => {
 
         const article = document.createElement('article');
         article.className = 'book';
 
-        let html = `
-                <h2>${articles.title}</h2>
-                <img src=${articles.imgSrc} alt=${articles.imgAlt}>
-                <p><strong>Release Date:</strong> ${articles.date}</p>
-                <p><strong>Recommended Age:</strong> ${articles.ages}</p>
-                <p><strong>Genre:</strong> ${articles.genre}</p>
-                <p><strong>Rating:</strong> <span aria-label="${articles.stars.length} out of 5 stars" role="img">${articles.stars}</span></p>
-                <p id='desc'>${articles.description}</p>
+        const bookInfo = document.createElement('div')
+        bookInfo.className = 'book-information';
+        
+        const bookContent = document.createElement('div')
+        bookContent.className = 'book-content';
+        
+        bookInfo.innerHTML = `                
+                <p> ${item.date}</p>
+                <p> ${item.ages}</p>
+                <p> ${item.genre}</p>
+                <p><span aria-label="${item.stars.length} out of 5 stars" role="img">${item.stars}</span></p>
+                `
+        
+        bookContent.innerHTML = `
+                <h2>${item.title}</h2>
+                <img src=${item.imgSrc} alt=${item.imgAlt}>
+                <p id='desc'>${item.description}</p>
                 `
 
-    article.innerHTML = html;
+    article.appendChild(bookInfo);
+    article.appendChild(bookContent);
     bookList.appendChild(article);
     
     });
