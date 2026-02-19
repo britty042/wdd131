@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Credit Card Page</title>
+    <meta name="author" content="Brittney Child">
+    <meta name="description" content="This a WDD 131 project to builds a form that looks like a credit card">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="style.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    
+    <div class="errors"></div>
+    <form id="cardInfo" action="completed.html" method="get">
+        <div id="topCard">
+            <div id="cardFront">
+                <div class="cardHeader">
+                    <p>TOTAL: $199</p>
+                    <span class="cardLogo"> 💳 </span>
+                    </div>
+                <div id="cardNumber">
+                    <label id="creditCardLabel" for="creditCardNumber">CARD NUMBER</label>
+                    <input
+                    type="text"
+                    id="creditCardNumber"
+                    name="creditCardNumber"
+                    pattern="[0-9]{16}"
+                    placeholder="1234 5678 9101 1020"
+                    required
+                    />
+                </div>
+                <div class="cardHolder">
+                    <label for="cardHolder">CARD HOLDER</label>
+                    <input 
+                        type="text" 
+                        id="cardHolder" 
+                        name="cardHolder"
+                        placeholder="John Doe" 
+                        required>
+                </div>
+                <div id="cardExpiration">
+                    <label>EXPIRATION</label>
+                    <div class="expInputs">
+                        <input 
+                            type="text" 
+                            id="month" 
+                            name="expMonth" 
+                            placeholder="MM">
+                        <input 
+                            type="text" 
+                            id="year" 
+                            name="expYear" 
+                            placeholder="YY"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottomCard">
+            <div id="cardBack">
+                 <hr>
+                <div class="cardCvc">
+                    <label for="cardCvc"> CVC/CVV</label>
+                    <input
+                        type="text"
+                        id="cardCvc"
+                        name="cardCvc"
+                        placeholder="xxx"
+                        aria-labelledby="cardCvc">
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+
+</body>
+</html>
