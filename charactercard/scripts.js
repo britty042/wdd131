@@ -10,6 +10,7 @@ const character = {
         if (healthIndex <= 0) {
             this.health = 0;
             createCharacter();
+            alert("Character died.")
         }
 
         else {
@@ -24,16 +25,11 @@ const character = {
 function createCharacter() {
     document.querySelector('.name').textContent = character.name;
 
-    let healthInfo = character.health;
-
-    if (healthInfo === 0) {
-        healthInfo = "Bummer! This character has died!";
-    }
-
+  
     document.querySelector('.stats').innerHTML = 
         `<p>Class: ${character.class}</p>
         <p>Level: ${character.level}</p>
-        <p>Health: ${healthInfo}</p>`;
+        <p>Health: ${character.health}</p>`;
 
     document.querySelector('.image').src = character.image;
     document.querySelector('.image').alt = 'Image of a tough looking alligator with armor';
