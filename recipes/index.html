@@ -7,17 +7,67 @@
     <meta name="description" content="This is the Unit 5A Week 9 assignment page for WDD 131. It is a recipe book.">
     <title>Recipe Book-Brittney Child</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fleur+De+Leah&family=Great+Vibes&family=Imperial+Script&family=League+Script&family=Lobster&family=Mea+Culpa&family=Rouge+Script&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="scripts.js" defer></script>
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ecipe Book-Brittney Child">
+    <meta property="og:title" content="Recipe Book-Brittney Child">
     <meta property="og:description" content="This is the Unit 5A Week 9 assignment page for WDD 131. It is a recipe book.">
     <meta property="og:url" content="https://britty042.github.io/wdd131/recipes/index.html">
     <!-- One favicon (ICO works everywhere) -->
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="favicon.ico"> 
+    <!-- 
+    Searchbar assistance and flexbox debugging guidance provided by ChatGPT (OpenAI), 2026.
+    https://chat.openai.com/
+    -->   
 </head>
 <body>
-    
+    <header>
+        <img src="images/recipe-book.png" alt="Outlined picture of a recipe book with a chef's hat on the cover">
+        <h1>Recipe Book</h1>   
+    </header>
+    <main>
+        <form class="search">
+            <input type="search" placeholder="Find a recipe" />
+            <button type="submit" class="search-button" aria-label="Search">
+                <img src="images/search.png" alt="magnifying glass">
+            </button>
+        </form>
+        <hr>
+        <section class="recipe-card-container">
+            <div class="recipe-card">
+                <img src="images/apple-crisp.jpg" alt="A bowl of apple crisp with vanilla ice cream on top">
+                <div class="recipe-card-content">
+                    <button>dessert</button>
+                    <h2>Apple Crisp</h2>
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: 4 out of 5 stars"
+                        >
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">☆</span>
+                    </span>
+                    <p>This apple crisp recipe is a simple yet delicious faill dessert that's great served warm with vanilla ice cream.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer> 
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>                           
+        <div class="social">
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+        </div>                  
+         
+    </footer>
 </body>
 </html>

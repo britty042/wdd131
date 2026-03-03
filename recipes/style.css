@@ -1,0 +1,152 @@
+/*Searchbar guidance provided by ChatGPT (OpenAI), 2026 */
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    margin: 0 auto;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: "Amatic SC", sans-serif;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 80%;
+    padding: .5em;
+    margin: 0 auto;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    flex: 1;
+}
+
+.search button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid black;
+}
+
+.search img {
+    width: 20px;
+    height: 20px;
+}
+
+hr {
+    width: 85%;
+}
+.recipe-card-container {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.recipe-card img {
+    max-width: 100%;
+}
+
+.recipe-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.recipe-card-content button {
+   margin-top: 2px;
+   max-width: 80px;;
+}
+
+.recipe-card-content h2 {
+    color: blue;
+    font-size: 2em;
+    padding: 2px;
+    margin: 15px 0px 0px 0px;
+}
+
+.recipe-card-content p {
+    display: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1em;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    margin: 10px;
+}
+
+.social img {
+    width: 20px;
+}
+
+
+@media screen and (min-width: 550px)  {
+    .recipe-card{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1em;
+    }
+
+    .recipe-card img {
+        width: 50%;
+
+    }
+    .recipe-card-content {
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .recipe-card-content p {
+        display: block;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    
+}
