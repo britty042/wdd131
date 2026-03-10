@@ -8,7 +8,7 @@ const recipes = [
 		datePublished: '2016-10-16',
 		tags: ['Waffles', 'Sweet Potato', 'Side'],
 		description: 'Savory waffles made with Sweet potato with a hint of Ginger',
-		image: './images/sweet-potato-waffle-md.jpg',
+		image: 'images/sweet-potato-waffle-md.jpg',
 		recipeIngredient: [
 			'2 separated eggs',
 			'1/4 C Oil',
@@ -44,7 +44,7 @@ const recipes = [
 		tags: ['Chicken', 'Entree'],
 		description:
 			'Delicious quick and easy creamy rice dish. The mustard, mushrooms, and lemon all blend together wonderfully',
-		image: './images/escalopes-de-poulet-a-la-creme.webp',
+		image: 'images/escalopes-de-poulet-a-la-creme.webp',
 		recipeIngredient: [
 			'2 Chicken Tenders, Cubed',
 			'4 Mushrooms, Sliced',
@@ -76,7 +76,7 @@ const recipes = [
 		tags: ['Potatoes', 'side'],
 		description:
 			'Easy and delicious oven roasted potatoes that go great with almost anything.',
-		image: './images/roasted-potatoes.webp',
+		image: 'images/roasted-potatoes.webp',
 		recipeIngredient: [
 			'3-4 Medium Potatoes',
 			'1 Tbsp Olive oil',
@@ -106,7 +106,7 @@ const recipes = [
 		tags: ['Southwest', 'entree'],
 		description:
 			'Black beans and tomatoes served over a bed of rice. Top with cheese and scoop up with tortilla chips for maximum enjoyment.',
-		image: './images/black-beans-and-rice.jpg',
+		image: 'images/black-beans-and-rice.jpg',
 		recipeIngredient: [
 			'1 Medium Onion, diced',
 			'2 Cloves Garlic, minced',
@@ -139,7 +139,7 @@ const recipes = [
 		tags: ['chicken', 'entree', 'Indian'],
 		description:
 			'Quick and easy Chicken curry recipe made with easy to find ingredients.',
-		image: './images/chicken-curry.webp',
+		image: 'images/chicken-curry.webp',
 		recipeIngredient: [
 			'4 Slices Bacon',
 			'1 clove Garlic',
@@ -176,7 +176,7 @@ const recipes = [
 		datePublished: '2018-09-19',
 		tags: ['dessert'],
 		description: 'Delicious soft chocolate chip cookies with coconut.',
-		image: './images/chocolate-chip-cookies.jpg',
+		image: 'images/chocolate-chip-cookies.jpg',
 		recipeIngredient: [
 			'1 Lb butter, softened',
 			'1 C white sugar',
@@ -211,7 +211,7 @@ const recipes = [
 		tags: ['dessert', 'German'],
 		description:
 			"This gooseberry cake with crumble is easy to follow, a bit tart and not too sweet. Made up of a cake base, filled with fresh gooseberries and vanilla cream and finished off with crumble that's flavored with vanilla. A must have recipe for gooseberry lovers!!",
-		image: './images/german-gooseberry-cake.jpg',
+		image: 'images/german-gooseberry-cake.jpg',
 		recipeIngredient: [
 			'For the Cake Base:',
 			'180 g (1 ½ cups/ 6.3 oz) plain flour',
@@ -254,7 +254,7 @@ const recipes = [
 		tags: ['dessert'],
 		description:
 			"This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.",
-		image: './images/apple-crisp.jpg',
+		image: 'images/apple-crisp.jpg',
 		recipeIngredient: [
 			'10 C apples, cored and sliced',
 			'1 C white sugar',
@@ -282,27 +282,65 @@ const recipes = [
 ]      
 
 let recipeCardContainer = document.querySelector('.recipe-card-container');
-let searchButton = document.querySelector('.search-button');
+let searchForm = document.querySelector('.search');
 
-searchButton.addEventListener('click', search);
+searchForm.addEventListener('submit', search);
 
-function search() {
+function search(event) {
 
+    event.preventDefault();
+    let recipeQuery = document.querySelector('#search').value;
+
+    let filterRecipes = recipes.filter(function(recipe) {
+        return (
+            recipe.name.toLowerCase().includes(recipeQuery.toLowerCase())  || 
+            recipe.description.toLowerCase().includes(recipeQuery.toLowerCase()) ||
+            recipe.tags.find(tag => tag.toLowerCase().includes(recipeQuery.toLowerCase()))
+
+        );
+    })
+
+    let sortedRecipes = filterRecipes.sort(compareRecipes);
+    
+    function compareRecipes(a,b) {
+    if (a.rating < b.rating) {
+        return -1;
+    } else if (a.rating > b.rating) {
+        return 1;
+    }
+    return 0;
+    }
+
+    recipeCardContainer.innerHTML = '';
+    sortedRecipes.forEach(function(recipe) {
+        renderRecipe(recipe);
+    })
 }
 
-function recipeTemplate(recipe) {
+function renderRecipe(recipe) {
+    let html = recipeTemplate(recipe);
+    recipeCardContainer.innerHTML += html
+}
+
+    function recipeTemplate(recipe) {
+        
+        let tagsHTML = recipe.tags.map(function(tag) {
+            return `<button class='tag'> ${tag}</button>`;
+        }).join(' ');
+
     return ` <div class="recipe-card">
-                <img ${recipes.image} alt="A bowl of apple crisp with vanilla ice cream on top">
+                <img src="${recipe.image}" alt= ${recipe.name}>
                 <div class="recipe-card-content">
-                    <button>${recipes.tags}</button>
-                    <h2>${recipes.name}</h2>
-                   <p>${ratingTemplate(recipes.rating)}</p>
+                    <div class='tags'>${tagsHTML}</div>
+                    <h2>${recipe.name}</h2>
+                   <p>${ratingTemplate(recipe.rating)}</p>
                     <p>This apple crisp recipe is a simple yet delicious faill dessert that's great served warm with vanilla ice cream.</p>
                 </div>
             </div>
     `
 }
 
+//Do something to fix tags so there is a cap at the beginning of each wor
 function ratingTemplate(rating) {
 		let html = `<span
 	class="rating"
@@ -319,3 +357,11 @@ function ratingTemplate(rating) {
     html += `</span>`
     return html
   }
+
+let randomNum = Math.floor(Math.random() * recipes.length);
+
+  function init() {
+    renderRecipe(recipes[randomNum]);
+}
+
+init();
