@@ -64,7 +64,7 @@ function shopTemplate(product) {
     return `<div class="shop-card">
         <img src="${product.image}" alt=${product.name}>
         <div class="shop-product-content">
-            <h2>${product.name}</h2>
+            <h3>${product.name}</h3>
             <p>${product.description}</p>
         </div>
         <button type="submit" class="add-cart" aria-label="Add to Cart">Add To Cart</button>

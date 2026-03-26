@@ -8,8 +8,12 @@
     <meta name="description" content="This is a WDD 131 final project. It is a webstie for Dreammaker Design, a laser cutting business.">
     <title>Dreammaker Design-Brittney Child</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/scripts.js" defer></script> 
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/shop.js" defer></script> 
+    <script src="scripts/responsivemenu.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dreammaker Design-Brittney Child">
     <meta property="og:description" content="This is a WDD 131 final project. It is a webstie for Dreammaker Design, a laser cutting business.">
@@ -19,13 +23,22 @@
 <body>
     <div id="content">
     <header>
-        <nav>
+            <div class="header-content">
+            <div class="logo-area">
+                <a id="logo_link" href="index.html">
+                <img class="logo" src="images/logo.png" alt="Dreammaker Design Logo">
+                </a>
+            </div>
+        </div>
+        <nav class="navigation">
             <a href="index.html">Home</a>
             <a href="shop.html">Shop</a>
-            <a id="logo_link" href="index.html">
-            <img class="logo" src="images/logo.png" alt="Dreammaker Design Logo">
-        </a>
-    </nav>
+            <button id="menu"></button>
+        </nav>
+        <label class="switch" for="darkModeToggle">
+            <input type="checkbox" id="darkModeToggle" onchange="darkMode()">
+            <span class="slider round"></span>
+        </label>
     </header>
     <div id="hero">
         <div id="hero-box">
@@ -36,7 +49,7 @@
         </section>
     </div>
     <main class="main-grid">
-             <h3>Shop</h3>
+             <h2>Shop</h2>
             <div class="main-shop-grid">
                 
             </div>
