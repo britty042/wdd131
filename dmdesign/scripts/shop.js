@@ -122,9 +122,10 @@ addCart.forEach(button => {
 
           setTimeout(() => {
                msg.style.opacity = '0';}, 1500);
-          });
-            setTimeout(() => {
+               
+          setTimeout(() => {
             msg.remove();
-        }, 2000);
+               }, 2000);
+     });
      });
 
