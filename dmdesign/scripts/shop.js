@@ -76,7 +76,7 @@ function shopTemplate(product) {
    
     let randomNumbers=[];
 
-     for (let i=0; i <4; i++) {
+     for (let i=0; i <3; i++) {
 
         let randomNum = Math.floor(Math.random() * products.length);
 
@@ -107,3 +107,24 @@ if (mainShopContainer) {
 if (shopContainer) {
      shopPage();
 }
+
+const purchaseMsg = document.querySelector('.purchase');
+const addCart = document.querySelectorAll('.add-cart');
+
+addCart.forEach(button => {
+     button.addEventListener('click', () => {
+          const msg = document.createElement('div');
+          msg.classList.add('purchase-msg');
+          msg.textContent= 'Thank you for your purchase!';
+
+          const card=button.closest('.shop-card');
+          card.appendChild(msg);
+
+          setTimeout(() => {
+               msg.style.opacity = '0';}, 1500);
+          });
+            setTimeout(() => {
+            msg.remove();
+        }, 2000);
+     });
+
