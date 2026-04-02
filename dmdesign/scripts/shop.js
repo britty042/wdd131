@@ -1,3 +1,4 @@
+//Array of objects //
 const products = [
    { 
         name: "Standing Gingerbread People",
@@ -46,6 +47,7 @@ const products = [
    },
 ]
 
+//DOM interaction//
 let mainShopContainer = document.querySelector('.main-shop-grid');
 let shopContainer = document.querySelector('.shop-grid');
 
@@ -94,12 +96,13 @@ function shopTemplate(product) {
 function shopPage() {
      shopContainer.innerHTML = '';
      
+//Special Array Method
      products.forEach(product => {
           renderProductsShop(product);
 });
 }
 
-
+// Conditional Branching //
 if (mainShopContainer) {
      mainShop();
 }
@@ -111,6 +114,7 @@ if (shopContainer) {
 const purchaseMsg = document.querySelector('.purchase');
 const addCart = document.querySelectorAll('.add-cart');
 
+//Special Array Method//
 addCart.forEach(button => {
      button.addEventListener('click', () => {
           const msg = document.createElement('div');
